@@ -75,4 +75,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-           scp ./server/chatbot.py ec2-user@${{ secrets.HOST_DNS }}:/home/ec2-user/chatbot.py
+            export SSH_OPTIONS="-o StrictHostKeyChecking=no"
+            scp -o StrictHostKeyChecking=no ./server/chatbot.py ec2-user@${{ secrets.HOST_DNS }}:/home/ec2-user/chatbot.py
