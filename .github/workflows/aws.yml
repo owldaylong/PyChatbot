@@ -68,12 +68,12 @@ jobs:
         REMOTE_USER: ${{ secrets.USERNAME }}
         TARGET: ${{ secrets.TARGET_DIR }}
         
-    - name: Upload the server file to EC2
-      uses: appleboy/ssh-action@master
-      with:
-          host: ${{ secrets.HOST_DNS }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.EC2_SSH_KEY }}
-          script: |
-            export SSH_OPTIONS="-o StrictHostKeyChecking=no"
-            scp -o StrictHostKeyChecking=no ./server/chatbot.py ec2-user@${{ secrets.HOST_DNS }}:/home/ec2-user/chatbot.py
+    - name: Deploy server folder to EC2
+      env:
+          PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+          HOST_DNS: ${{ secrets.HOST_DNS }}
+      run: |
+          echo "$PRIVATE_KEY" > key.pem
+          chmod 600 key.pem
+          scp -i key.pem -r ./server ec2-user@$HOST_DNS:/home/ec2-user/server
+          rm key.pem
