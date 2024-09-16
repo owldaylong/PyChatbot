@@ -49,22 +49,22 @@ const Chat: React.FC = () => {
 	}
 
 	return (
-		<div className="flex flex-col bg-[#000000] items-center justify-center w-full gap-2">
+		<div className="flex flex-col items-center justify-center w-full gap-2 bg-[#0D1B2A] font-sans">
 			<ChatTextArea input={input} setInput={setInput} />
 			<div className="flex flex-row gap-2">
 				<button
 					type="submit"
-					className="px-4 rounded-well rounded border-[1px] border-zinc-100"
+					className="px-4 rounded-well rounded border-[1px] border-zinc-100 bg-[#1B263B] hover:bg-[#415A77] text-[#E0E6ED]"
 					onClick={() => {
 						console.log(input)
 						sendMessage(input)
 					}}
 					disabled={loading}>
-					{loading ? 'Sending...' : 'Send'}
+					{loading ? 'Crafting...' : 'Send'}
 				</button>
 				<button
 					type="button"
-					className="px-4 rounded-well rounded border-[1px] border-zinc-100"
+					className="px-4 rounded-well rounded border-[1px] border-zinc-100 bg-[#C74B4F] hover:bg-[#D76D6D] text-[#E0E6ED]"
 					onClick={() => {
 						setInput('')
 					}}>

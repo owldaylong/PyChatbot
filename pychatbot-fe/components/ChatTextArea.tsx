@@ -25,14 +25,14 @@ const ChatTextArea: React.FC<ChatTextAreaProps> = ({
 	}, [input])
 
 	return (
-		<div className="flex flex-col bg-[#000000] items-center justify-center w-full gap-2 px-2">
-			<h1 className="text-center">
-				⊹₊⟡⋆ 𝙈𝙖𝙠𝙚 𝙮𝙤𝙪𝙧 𝙨𝙤𝙘𝙞𝙖𝙡 𝙢𝙚𝙙𝙞𝙖 𝙘𝙖𝙥𝙩𝙞𝙤𝙣 𝙖𝙚𝙨𝙩𝙝𝙚𝙩𝙞𝙘𝙖𝙡𝙡𝙮 𝙥𝙡𝙚𝙖𝙨𝙞𝙣𝙜! ⊹₊⟡⋆
+		<div className="flex flex-col bg-[#0D1B2A] items-center justify-center w-full gap-2 px-2">
+			<h1 className="text-center font-sans">
+				( ˶ˆᗜˆ˵ ) Tell me what kind of caption do you want to get! ( ˶ˆᗜˆ˵ )
 			</h1>
 			<textarea
 				ref={textareaRef}
-				className="p-2 rounded border-[1px] border-zinc-100 resize-none overflow-hidden text-black"
-				placeholder="What kind of caption do you want?"
+				className="w-full p-3 rounded border-[1px] border-zinc-100 resize-none overflow-hidden text-black font-sans"
+				placeholder="Can you make me a caption for pizza photos..."
 				value={input}
 				onChange={(e) => {
 					setInput(e.target.value)
