@@ -68,7 +68,7 @@ jobs:
         REMOTE_USER: ${{ secrets.USERNAME }}
         REMOTE_PORT: 22  # Ensure this is correct or set as needed
       with:
-        args: rsync -avz --delete /home/runner/work/PyChatbot/PyChatbot/ ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }}:/home/${{ secrets.USERNAME }}/
+        args: sudo rsync -avz --delete /home/runner/work/PyChatbot/PyChatbot/ ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }}:/home/${{ secrets.USERNAME }}/
 
     - name: Executing remote ssh commands using ssh key
       uses: appleboy/ssh-action@master
