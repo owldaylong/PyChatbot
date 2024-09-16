@@ -68,3 +68,11 @@ jobs:
         REMOTE_USER: ${{ secrets.USERNAME }}
         TARGET: ${{ secrets.TARGET_DIR }}
         
+    - name: Upload the server file to EC2
+      uses: appleboy/ssh-action@master
+      with:
+          host: ${{ secrets.HOST_DNS }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+           scp ./server/chatbot.py ec2-user@${{ secrets.HOST_DNS }}:/home/ec2-user/chatbot.py
