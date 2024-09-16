@@ -67,7 +67,7 @@ jobs:
         REMOTE_HOST: ${{ secrets.HOST_DNS }}
         REMOTE_USER: ${{ secrets.USERNAME }}
         TARGET: ${{ secrets.TARGET_DIR }}
-        REMOTE_PORT: 22  # Ensure this is correct or set as needed
+        
 
     - name: Executing remote ssh commands using ssh key
       uses: appleboy/ssh-action@master
