@@ -1,14 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useRef, useEffect } from 'react'
 
 interface ChatTextAreaProps {
 	input: string
 	setInput: React.Dispatch<React.SetStateAction<string>>
 }
 
-const ChatTextArea: React.FC<ChatTextAreaProps> = ({
-	input,
-	setInput,
-}: any) => {
+const ChatTextArea: React.FC<ChatTextAreaProps> = ({ input, setInput }) => {
 	const textareaRef = useRef<HTMLTextAreaElement>(null)
 
 	const autoResizeHeight = () => {

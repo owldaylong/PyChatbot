@@ -10,14 +10,6 @@ interface Messages {
 	content: string
 }
 
-const initialMessage: Messages[] = [
-	{
-		role: 'system',
-		content:
-			"Hello, I'm a social media specialist who's ready to help you to get you your best caption!",
-	},
-]
-
 const Chat: React.FC = () => {
 	const [input, setInput] = useState('')
 	const [loading, setLoading] = useState(false)
@@ -26,7 +18,7 @@ const Chat: React.FC = () => {
 		setLoading(true)
 
 		try {
-			let payload = {
+			const payload = {
 				input: message,
 			}
 
