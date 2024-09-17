@@ -3,8 +3,6 @@
 import { useState } from 'react'
 import ChatTextArea from './ChatTextArea'
 
-type GroqAgent = 'user' | 'system'
-
 const Chat: React.FC = () => {
 	const [input, setInput] = useState('')
 	const [loading, setLoading] = useState(false)
