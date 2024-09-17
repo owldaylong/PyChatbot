@@ -5,14 +5,10 @@ import ChatTextArea from './ChatTextArea'
 
 type GroqAgent = 'user' | 'system'
 
-interface Messages {
-	role: GroqAgent
-	content: string
-}
-
 const Chat: React.FC = () => {
 	const [input, setInput] = useState('')
 	const [loading, setLoading] = useState(false)
+	const URL = 'https://pychatbot-nyou.onrender.com'
 
 	const sendMessage = async (message: string) => {
 		setLoading(true)
@@ -22,7 +18,7 @@ const Chat: React.FC = () => {
 				input: message,
 			}
 
-			const response = await fetch(`http://127.0.0.1:5000/chat`, {
+			const response = await fetch(`${URL}/chat`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
