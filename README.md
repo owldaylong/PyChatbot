@@ -7,7 +7,7 @@ This is a personal project only. Made with purpose of learning how to implement 
 - **Python** : Using Python Flask for the base on the Back-End Server side.
 - **GroqCloud** : Using Groq API libraries service with _llama3-70b-8192_ as the model.
 - **Next.js** : Using Next.js for the Front-End Client side.
-  = **TailwindCSS** : Using TailwindCSS for the layouting style.
+- **TailwindCSS** : Using TailwindCSS for the layouting style.
 
 ### Main Features
 
